@@ -4,9 +4,17 @@
 
 int		main()
 {
-	int	i = 'Z';
+	char	*mdr;
+	char	*toto;
 
-	extern int ft_tolower(int c);
-	printf("ret value = %c\n", (char)ft_tolower(i));
+	mdr = malloc(sizeof(char) * 4);
+	toto = malloc(sizeof(char) * 4);
+	mdr[0] = 'm';
+	mdr[1] = 'd';
+	mdr[2] = 'r';
+	mdr[3] = '\0';
+	extern void *ft_memcpy(char *dest, char *src, size_t len);
+	printf("%d\n", ft_memcpy(toto, mdr, 2));
+	printf("%s\n", toto);
 	return (0);
 }
