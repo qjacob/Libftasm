@@ -2,15 +2,11 @@ section .text
 	global _ft_strlen
 
 _ft_strlen:
-	push rcx
-	push rbp
-	mov rbp, rdi
-	mov al, 0
-	mov rcx, 0xffffffff
+	mov rax, 0
+	mov rcx, -1
+	cld
 	repne scasb
-	sub rdi, rbp
-	mov rax, rdi
-	dec rax
-	pop rcx
-	pop rbp
+	not rcx
+	dec rcx
+	mov rax, rcx
 	ret

@@ -13,8 +13,10 @@ int		main()
 	mdr[1] = 'd';
 	mdr[2] = 'r';
 	mdr[3] = '\0';
-	extern void *ft_memcpy(char *dest, char *src, size_t len);
-	printf("%d\n", ft_memcpy(toto, mdr, 2));
-	printf("%s\n", toto);
+	extern char *ft_strdup(char *s1);
+	printf("OUI\n");
+	printf("addr: %s\n", mdr);
+	printf("result: %s\n", ft_strdup(mdr));
+	printf("NON\n");
 	return (0);
 }
