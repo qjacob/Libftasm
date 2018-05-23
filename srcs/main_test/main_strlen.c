@@ -5,6 +5,6 @@
 int		main()
 {
 	extern int ft_puts(char *s);
-	printf("ret value = %d\n", ft_puts("HELLO"));
+	printf("ret value for \"HELLO\" = %d\n", ft_puts("HELLO"));
 	return (0);
 }

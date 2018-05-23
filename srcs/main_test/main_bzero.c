@@ -11,12 +11,11 @@ int		main()
 	str[1] = 'd';
 	str[2] = 'r';
 	str[3] = '\0';
-	printf("before: %s, %zu\n", str, len);
+	printf("before str: %s, len: %zu\n", str, len);
 	extern void ft_bzero(char *str, size_t len);
 	ft_bzero(str, len);
-	printf("LOL\n");
-	printf("after: %c, %zu\n", str[0], len);
-	printf("after after: %c\n", str[1]);
-	printf("after after OUI: %c\n", str[2]);
+	printf("after first str char: %c,  len: %zu\n", str[0], len);
+	printf("after second str char: %c\n", str[1]);
+	printf("after third str char: %c\n", str[2]);
 	return (0);
 }

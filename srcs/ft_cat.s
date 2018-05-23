@@ -31,7 +31,7 @@ _ft_cat:
 	mov rdx, BUFFSIZE
 	mov rax, MACSYSCALL(READ)
 	syscall
-	; call debug
+	jc error
 	cmp rax, 0
 	je exit
 	mov rdi, 1
