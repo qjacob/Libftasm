@@ -12,10 +12,12 @@ _ft_strdup:
 	mov rdi, rax
 	inc rdi
 	push rdi
+	push rdi
 	call _malloc
 	cmp rax, 0
 	je exit
 	mov rsi, rbp
+	pop rdx
 	pop rdx
 	mov rdi, rax
 	call _ft_memcpy
@@ -23,6 +25,7 @@ _ft_strdup:
 	ret
 
 exit:
+	pop rbp
 	pop rbp
 	pop rbp
 	mov rax, 0
