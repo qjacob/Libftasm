@@ -6,7 +6,7 @@
 #    By: qjacob <qjacob@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 16:54:05 by qjacob            #+#    #+#              #
-#    Updated: 2018/05/24 16:02:35 by qjacob           ###   ########.fr        #
+#    Updated: 2018/05/24 16:49:13 by qjacob           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,6 @@ $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 
 test: $(NAME) $(OBJC)
-	@echo "Creating test..."
 	@gcc main_test/main_bzero.o $(NAME) -o ft_bzero
 	@gcc main_test/main_cat.o $(NAME) -o ft_cat
 	@gcc main_test/main_isalnum.o $(NAME) -o ft_isalnum
@@ -112,11 +111,35 @@ exe: test
 	@./ft_toupper
 	@echo "End."
 
+help:
+	@echo "List of commands:\n"
+	@echo "	- test (create the executable file for test)"
+	@echo "	- exe (execute the file test)"
+	@echo "	- clean (clean obj file)"
+	@echo "	- fclean (clean obj file + lib file + exe file)"
+	@echo "	- clean_test (clean all executable file)"
+
+clean_test:
+	@rm -f ft_bzero
+	@rm -f ft_cat
+	@rm -f ft_isalnum
+	@rm -f ft_isalpha
+	@rm -f ft_isascii
+	@rm -f ft_isdigit
+	@rm -f ft_isprint
+	@rm -f ft_memcpy
+	@rm -f ft_memset
+	@rm -f ft_strcat
+	@rm -f ft_strdup
+	@rm -f ft_strlen
+	@rm -f ft_tolower
+	@rm -f ft_toupper
+
 clean:
 	@rm -f $(OBJ)
 	@rm -f $(OBJC)
 
-fclean: clean
+fclean: clean clean_test
 	@rm -f $(NAME)
 
 re: fclean all
