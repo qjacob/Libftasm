@@ -6,7 +6,7 @@
 #    By: qjacob <qjacob@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 16:54:05 by qjacob            #+#    #+#              #
-#    Updated: 2018/05/24 16:49:13 by qjacob           ###   ########.fr        #
+#    Updated: 2018/05/28 15:53:22 by qjacob           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ TESTS = main_test/main_bzero.c \
 		main_test/main_strlen.c \
 		main_test/main_tolower.c \
 		main_test/main_toupper.c \
+		main_test/main_puts.c \
 
 OBJ = $(SRCS:.s=.o)
 
@@ -70,6 +71,7 @@ test: $(NAME) $(OBJC)
 	@gcc main_test/main_isascii.o $(NAME) -o ft_isascii
 	@gcc main_test/main_isdigit.o $(NAME) -o ft_isdigit
 	@gcc main_test/main_isprint.o $(NAME) -o ft_isprint
+	@gcc main_test/main_puts.o $(NAME) -o ft_puts
 	@gcc main_test/main_memcpy.o $(NAME) -o ft_memcpy
 	@gcc main_test/main_memset.o $(NAME) -o ft_memset
 	@gcc main_test/main_strcat.o $(NAME) -o ft_strcat
@@ -105,6 +107,8 @@ exe: test
 	@./ft_strdup
 	@echo "\nft_strlen: \n"
 	@./ft_strlen
+	@echo "\nft_puts: \n"
+	@./ft_puts
 	@echo "\nft_tolower: \n"
 	@./ft_tolower
 	@echo "\nft_toupper: \n"
@@ -134,6 +138,7 @@ clean_test:
 	@rm -f ft_strlen
 	@rm -f ft_tolower
 	@rm -f ft_toupper
+	@rm -f ft_puts
 
 clean:
 	@rm -f $(OBJ)
