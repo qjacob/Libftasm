@@ -7,7 +7,7 @@ int		main()
 {
 	char	i = 'A';
 
-	printf("\x1B[36m");
+	printf("\x1B[32m");
 	printf("char = %c\n", i);
 	extern int ft_isalpha(char c);
 	printf("ret value = %d\n", ft_isalpha(i));
@@ -21,7 +21,7 @@ int		main()
 
 	char	i2 = 'A';
 
-	printf("\x1B[32m");
+	printf("\x1B[36m");
 	printf("char = %c\n", i2);
 	printf("ret value = %d\n", isalpha(i2));
 

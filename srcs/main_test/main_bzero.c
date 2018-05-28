@@ -12,7 +12,7 @@ int		main()
 	str[1] = 'd';
 	str[2] = 'r';
 	str[3] = '\0';
-	printf("\x1B[36m");
+	printf("\x1B[32m");
 	printf("before str: %s, len: %zu\n", str, len);
 	extern void ft_bzero(char *str, size_t len);
 	ft_bzero(str, len);
@@ -25,7 +25,7 @@ int		main()
 	char	*str2;
 	size_t	len2 = 4;
 
-	printf("\x1B[32m");
+	printf("\x1B[36m");
 	str2 = malloc(sizeof(char) * 4);
 	str2[0] = 'm';
 	str2[1] = 'd';

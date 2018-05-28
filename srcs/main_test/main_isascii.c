@@ -7,7 +7,7 @@ int		main()
 {
 	int	i = 122;
 
-	printf("\x1B[36m");
+	printf("\x1B[32m");
 	printf("char value = %d\n", i);
 	extern int ft_isascii(int c);
 	printf("ret value = %d\n", ft_isascii(i));
